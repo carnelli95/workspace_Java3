@@ -68,17 +68,6 @@ public class train_실습3_10_객체comparator구현 {
 		}
 	}
 	
-	private static Student[] comparater(Student[] students) {
-		Student[] sortedStudents;
-		for(int i = 0; i < students.length; i++) {
-			students.compare;
-			for()
-		}
-		
-		
-		return students;
-	}
-	
 	public static void main(String[] args) {
 		
 		Student[] students = {
@@ -97,15 +86,23 @@ public class train_실습3_10_객체comparator구현 {
 
 		show(students);
 		
-		Comparator<Student> comp = (s1, s2) -> s1.getSid().compareTo(s2.getSid());
+		Comparator<Student> comparator = (s1, s2) -> s1.getSid().compareTo(s2.getSid());
 		
-		Arrays.sort(students, comp);
+		Arrays.sort(students, comparator);
 		
-		System.out.println("===SID가 S002인 학생 검색===");
+		System.out.println("===Target 검색===");
 		
-		String key = "S002";
+		for(Student target : targets) {
+			
+			int idx = Arrays.binarySearch(students, target, comparator);
 		
-		Arrays.binarySearch(students, key, comp);
+			if (idx >= 0) {
+				System.out.println("찾은 학생 : " + students[idx]);
+			}
+			else {
+				System.out.println("학번 " + target.getSid() + "인 학생은 존재하지 않습니다.");
+			}
+		}
 	}
 }
 	

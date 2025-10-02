@@ -78,13 +78,7 @@ public class train_5_7_1KnightTracking_실습 {
         while (!stack.isEmpty()) {
             
             // 8가지 방향으로 나이트 이동 시도
-        	int d = 0;
-        	while() {
-        		
-        		x = startX + moves[d].a;
-        		y = startY + moves[d].b;
-        		d++;
-        	}
+           
 
             // 더 이상 이동할 곳이 없을 경우
            
